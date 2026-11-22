@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#120910" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Feliz Aniversário, Mona!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./frontend/css/index.css" />
+</head>
+<body>
+  <!-- Música principal do site todo -->
+  <audio id="siteAudio" loop preload="auto">
+    <source src="frontend/images/musica/pablo v.mp4" type="audio/mpeg" />
+  </audio>
+
+  <!-- Canvas de confetes / picadinho -->
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <main class="card-wrapper" id="top">
+    <!-- 1. Cabeçalho -->
+    <section class="hero-card">
+      <span class="hero-tag">Cartão Especial</span>
+      <h1 class="hero-title">Feliz Aniversário, Mona!</h1>
+      <p class="hero-subtitle">
+        Um cantinho especial, feito com muito carinho, para celebrar o seu dia e guardar tantas histórias, momentos e lembranças nossas, bixa! Porque você merece todo amor e carinho do mundo.
+      </p>
+      <button type="button" class="btn btn-primary celebrate-trigger" id="heroConfettiBtn">
+        Soltar Confetes
+      </button>
+    </section>
+
+    <!-- 2. Mensagenzinha inicial -->
+    <section class="note-card">
+      <span class="note-label">Mensagenzinha</span>
+      <p class="note-text">
+        Que o seu novo ciclo seja repleto de paz, conquistas, alegrias, risadas sinceras e motivos de sobra para sorrir! Que não faltem bênçãos, sonhos realizados e momentos especiais para tornar cada dia ainda mais bonito. Que a felicidade te acompanhe em cada passo!
+      </p>
+    </section>
+
+    <!-- 3. Primeiro bloco centralizado: SOMENTE VÍDEO -->
+    <section class="media-block">
+      <a
+        class="media-frame"
+        id="frame-solo-1"
+        href="frontend/images/VIDEOS/A1.mp4"
+        data-media-type="video"
+        aria-label="Abrir vídeo 1"
+      >
+        <video class="media-video" playsinline preload="metadata" hidden>
+          <source href="" src="" />
+        </video>
+        <div class="media-placeholder">
+          <strong>Vídeo 1</strong>
+          <span>Toque para abrir com som</span>
+        </div>
+      </a>
+      <p class="media-caption">
+        registros da nossa história!
+      </p>
+    </section>
+
+    <!-- 4. Outras mensagenzinhas -->
+    <section class="note-card">
+      <span class="note-label">Mais uma mensagenzinha</span>
+      <p class="note-text">
+        Mesmo com a correria e os quilômetros entre a gente, você continua sendo uma presença única na minha vida.
+      </p>
+    </section>
+
+    <section class="note-card">
+      <span class="note-label">Lembrança rápida</span>
+      <p class="note-text">
+        Tem coisas que só quem viveu junto entende. E eu sou muito grato por cada momento que a gente compartilhou.
+      </p>
+    </section>
+
+    <!-- 5. Três mídias lado a lado com looping infinito (foto ou vídeo) -->
+    <section class="strip-section" id="nossosMomentosSection">
+      <h2 class="strip-title">Nossos Momentos</h2>
+
+      <!-- Música exclusiva da parte das três mídias em loop -->
+      <audio id="momentosAudio" loop preload="auto">
+        <source src="frontend/images/musica/pequena.m4a" type="audio/mpeg" />
+      </audio>
+
+      <!-- Lista de mídias do loop: adicione ou varie com foto ou vídeo no href -->
+      <div class="media-source-list" id="loopMediaSources" hidden>
+        <a href="frontend/images/Nossos Momentos/A.jpeg" data-media-type="auto" data-label="Momento 1">Momento 1</a>
+        <a href="frontend/images/Nossos Momentos/B.jpeg" data-media-type="auto" data-label="Momento 2">Momento 2</a>
+        <a href="frontend/images/Nossos Momentos/C.mp4" data-media-type="auto" data-label="Momento 3">Momento 3</a>
+        <a href="frontend/images/Nossos Momentos/D.jpeg" data-media-type="auto" data-label="Momento 4">Momento 4</a>
+        <a href="frontend/images/Nossos Momentos/E.mp4" data-media-type="auto" data-label="Momento 5">Momento 5</a>
+        <a href="frontend/images/Nossos Momentos/F.mp4" data-media-type="auto" data-label="Momento 6">Momento 6</a>
+        <a href="frontend/images/Nossos Momentos/G.mp4" data-media-type="auto" data-label="Momento 7">Momento 7</a>
+        <a href="frontend/images/Nossos Momentos/H.jpeg" data-media-type="auto" data-label="Momento 8">Momento 8</a>
+        <a href="frontend/images/Nossos Momentos/I.mp4" data-media-type="auto" data-label="Momento 9">Momento 9</a>
+        <a href="frontend/images/Nossos Momentos/J.jpeg" data-media-type="auto" data-label="Momento 10">Momento 10</a>
+        <a href="frontend/images/Nossos Momentos/K.jpeg" data-media-type="auto" data-label="Momento 11">Momento 11</a>
+        <a href="frontend/images/Nossos Momentos/L.jpeg" data-media-type="auto" data-label="Momento 12">Momento 12</a>
+        <a href="frontend/images/Nossos Momentos/M.jpg" data-media-type="auto" data-label="Momento 13">Momento 13</a>
+      </div>
+
+      <div class="three-grid" id="loopingThreeGrid"></div>
+
+      <div class="carousel-controls">
+        <button type="button" class="btn btn-soft" id="prevLoopBtn">Anterior</button>
+        <span class="carousel-status" id="loopStatus">Início 1 de 3</span>
+        <button type="button" class="btn btn-soft" id="nextLoopBtn">Próximas</button>
+      </div>
+    </section>
+
+    <!-- 6. Mensagem logo abaixo das três mídias -->
+    <section class="note-card">
+      <span class="note-label">Recado</span>
+      <p class="note-text">
+       "Cada clique guarda um pedacinho de quem somos e de tudo aquilo que ainda vamos viver juntos."
+      </p>
+    </section>
+
+    <!-- 7. Segunda caixinha centralizada: mesmo jeito da primeira (foto ou vídeo) -->
+    <section class="media-block">
+      <a
+        class="media-frame"
+        id="frame-solo-2"
+        href="frontend/images/VIDEOS/A1.mp4"
+        data-media-type="auto"
+        aria-label="Abrir mídia 2"
+      >
+        <img class="media-img" alt="Foto ou vídeo 2" hidden />
+        <video class="media-video" playsinline preload="metadata" hidden>
+          <source href="" src="" />
+        </video>
+        <div class="media-placeholder">
+          <strong>Foto ou Vídeo 2</strong>
+          <span>Toque para abrir</span>
+        </div>
+      </a>
+      <p class="media-caption">
+        Mais um registro especial nosso
+      </p>
+    </section>
+
+    <!-- 8. História da amizade -->
+    <section class="story-card">
+      <span class="note-label">Nossa História</span>
+      <h2 class="story-title">Da Família para a Vida Inteira</h2>
+      <p class="story-body">
+        Além de sermos primos, construímos uma amizade daquelas que vão muito além dos laços de família. Nossa história é marcada por muitas risadas, aventuras na motinha, passeios de Biz e, principalmente, muita farra! Foram tantos momentos, tantas loucuras e histórias que só a gente sabe contar. Daquelas lembranças que, quando vêm à cabeça, sempre arrancam boas risadas. Você sempre foi muito mais que uma prima: foi companhia, parceria, cumplicidade e alguém com quem pude compartilhar momentos que vou levar comigo para sempre.
+
+        No ano passado, a vida acabou mudando um pouco nossos caminhos. Eu vim morar em Fortaleza, enquanto você continuou em Viçosa, e nossa convivência já não é mais como antes. Mas, mesmo com a distância, nunca deixamos de estar presentes na vida um do outro. Entre nossas ligações, conversas e atualizações sobre tudo que acontece, continuamos compartilhando o dia a dia, mesmo estando em cidades diferentes. E não posso deixar de lembrar de um dos momentos mais especiais deste ano: os Ensaios da Anitta, a realização de um sonho meu, que ficou ainda mais especial porque você pôde estar aqui em Fortaleza e fazer parte dele. São momentos assim que mostram o quanto é bom ter você por perto, seja nas grandes conquistas ou nas pequenas loucuras da vida. Minha piranha, minha BIXA, minha cúmplice e minha parceira de tantas histórias, que nunca nos faltem motivos para rir, viver novas aventuras e construir muitas outras lembranças juntas! ❤️
+      </p>
+    </section>
+
+    <!-- 9. Seis mídias paradas (mesmo jeito das três, porém estáticas) -->
+    <section class="six-grid-card">
+      <h2 class="strip-title">Lembranças Especiais</h2>
+
+      <div class="media-source-list" id="sixMediaSources" hidden>
+        <a href="frontend/images/Lembranças Especiais/1.jpeg" data-media-type="auto" data-label="Lembrança 1">Lembrança 1</a>
+        <a href="frontend/images/Lembranças Especiais/2.jpeg" data-media-type="auto" data-label="Lembrança 2">Lembrança 2</a>
+        <a href="frontend/images/Lembranças Especiais/3.jpeg" data-media-type="auto" data-label="Lembrança 3">Lembrança 3</a>
+        <a href="frontend/images/Lembranças Especiais/4.mp4" data-media-type="auto" data-label="Lembrança 4">Lembrança 4</a>
+        <a href="frontend/images/Lembranças Especiais/5.mp4" data-media-type="auto" data-label="Lembrança 5">Lembrança 5</a>
+        <a href="frontend/images/Lembranças Especiais/6.mp4" data-media-type="auto" data-label="Lembrança 6">Lembrança 6</a>
+      </div>
+
+      <div class="six-grid" id="fixedSixGrid"></div>
+    </section>
+
+    <!-- 10. Mensagem final das seis mídias -->
+    <section class="note-card">
+      <span class="note-label">Encerrando essas seis lembranças</span>
+      <p class="note-text">
+        Seis registros de momentos especiais, cheios de risadas, cumplicidade e muita história. Cada foto guarda um pedacinho da nossa amizade e representa lembranças que o tempo e a distância jamais vão apagar. Afinal, algumas histórias merecem ser lembradas para sempre!
+      </p>
+    </section>
+
+    <!-- 11. Mensagem adicional com "Feliz aniversário mais uma vez, Analice Pereira" + Instagram -->
+    <section class="note-card highlight">
+      <span class="note-label">Dedicatória Final</span>
+      <p class="note-text">
+        Feliz aniversário, minha mona! Que a vida continue te surpreendendo com coisas boas, que seus sonhos se realizem e que nunca faltem motivos para sorrir. Continue sendo essa pessoa única, cheia de personalidade e que faz parte de tantas histórias da minha vida. Que venham muitas outras aventuras, farras e lembranças para colecionarmos. Você sabe que, independentemente da distância, estamos sempre juntas nessa. Te amo, minha piranha! ❤️
+      </p>
+
+      <a
+        id="analiceInstaLink"
+        class="analice-link"
+        href="https://instagram.com/mona_pereira_"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span>@mona_pereira_</span>
+      </a>
+    </section>
+
+    <!-- 12. Rodapé do criador -->
+    <footer class="creator-footer">
+      <p class="creator-line">
+        Criado por: Gabryel Ângelo[cite: 1]
+      </p>
+      <p class="creator-role">
+        Desenvolvedor Mobile
+      </p>
+      <nav class="social-links" aria-label="Redes e links do criador">
+        <a class="social-btn" href="https://www.instagram.com/gabryelangelo_?utm_source=ig_web_button_share_sheet&hvrq=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+      </nav>
+    </footer>
+  </main>
+
+  <!-- Modal Lightbox para foto inteira ou vídeo com som -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada">
+    <div class="lightbox-box">
+      <div class="lightbox-header">
+        <span class="lightbox-badge" id="lightboxBadge">Foto Completa</span>
+        <button type="button" class="btn btn-soft" id="closeLightboxBtn">
+          Fechar
+        </button>
+      </div>
+      <div class="lightbox-media-wrap" id="lightboxMediaContainer"></div>
+    </div>
+  </div>
+
+  <script src="./frontend/js/index.js"></script>
+</body>
+</html>
